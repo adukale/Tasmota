@@ -23,6 +23,19 @@
 // force the compiler to show a warning to confirm that this file is included
 #warning **** user_config_override.h: Using Settings from this File ****
 
+//Enable AWS IOT
+
+#ifndef USE_MQTT_TLS
+#define USE_MQTT_TLS
+//#define USE_MQTT_TLS_CA_CERT // Optional but highly recommended
+#endif
+#ifndef USE_MQTT_AWS_IOT_LIGHT
+#define USE_MQTT_AWS_IOT_LIGHT
+#endif
+#ifdef USE_DISCOVERY
+#undef USE_DISCOVERY
+#endif
+
 /*****************************************************************************************************\
  * USAGE:
  *   To modify the stock configuration without changing the my_user_config.h file:
